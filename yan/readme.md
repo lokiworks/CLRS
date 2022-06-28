@@ -3,7 +3,7 @@
 
 ` a tool for solving a well-specified computational problem `
 * why study algo
-* what's role
+with a good backgroud in algorithms, you can do much, much more.
 
 ### concepts
 A **data structures** is a way to store and organize data in order to facilitate access and modifications
