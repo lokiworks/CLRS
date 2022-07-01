@@ -107,12 +107,3 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return l
 
 }
-
-func main() {
-
-	l1 := &ListNode{2, &ListNode{4, &ListNode{3, nil}}}
-	l2 := &ListNode{5, &ListNode{6, &ListNode{4, nil}}}
-
-	r := addTwoNumbers(l1, l2)
-	println(r)
-}
