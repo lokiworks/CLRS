@@ -1,6 +1,5 @@
 package main
 
-
 /**
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -35,19 +34,19 @@ Only one valid answer exists.
 
 Follow-up:Can you come up with an algorithm that is less than O(n2) time complexity?
 
- */
-func twoSum(nums[] int, target int) []int{
-	m :=make(map[int]int)
-	for i,e :=range nums{
+*/
+func twoSum(nums []int, target int) []int {
+	m := make(map[int]int)
+	for i, e := range nums {
 		m[e] = i
 	}
 
-	for i,e := range nums{
+	for i, e := range nums {
 		r := target - e
-		j , ok := m[r]
-		if ok{
-			if i!=j{
-				return []int{i,j}
+		j, ok := m[r]
+		if ok {
+			if i != j {
+				return []int{i, j}
 			}
 
 		}
