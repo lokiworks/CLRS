@@ -25,7 +25,3 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 		return float64(cur)
 	}
 }
-
-func main() {
-	println(findMedianSortedArrays([]int{0, 0}, []int{0, 0}))
-}
