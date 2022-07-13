@@ -41,11 +41,3 @@ func reverseV2(x int) int {
 	}
 	return r
 }
-
-func main() {
-	println(reverseV2(-2147483412))
-	println(reverse(123))
-	println(reverse(120))
-	println(reverse(-123))
-
-}
