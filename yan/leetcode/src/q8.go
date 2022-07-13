@@ -98,7 +98,3 @@ func myAtoiV2(s string) int {
 
 	return signed * r
 }
-
-func main() {
-	println(myAtoiV2("-91283472332"))
-}
