@@ -44,7 +44,7 @@ func Test_headSort(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := headSort(tt.args.a); !reflect.DeepEqual(got, tt.want) {
+			if got := heapSort(tt.args.a); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("headSort() = %v, want %v", got, tt.want)
 			}
 		})

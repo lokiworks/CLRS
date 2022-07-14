@@ -42,7 +42,7 @@ func buildMaxHeap(a []int) {
 	}
 }
 
-func headSort(a []int) []int {
+func heapSort(a []int) []int {
 	buildMaxHeap(a)
 	l := len(a)
 	for i := len(a) - 1; i >= 1; i-- {
