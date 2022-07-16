@@ -11,7 +11,7 @@ func init() {
 }
 
 func randomizedPartition(a []int, p, r int) int {
-	i := rand.Intn((r - p) + p)
+	i := rand.Intn(r-p) + p
 	a[i], a[r] = a[r], a[i]
 	return partition(a, p, r)
 
@@ -31,6 +31,6 @@ func randomizedQuickSort(a []int) []int {
 }
 
 func main() {
-	a := randomizedQuickSort([]int{5, 4, 3, 2, 1})
+	a := randomizedQuickSort([]int{5, 4, 2, 2, 1})
 	println(a)
 }
