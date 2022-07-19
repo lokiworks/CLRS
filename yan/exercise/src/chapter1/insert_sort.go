@@ -1,4 +1,4 @@
-package chapter1
+package main
 
 func insertSort(a []int) []int {
 	len := len(a)

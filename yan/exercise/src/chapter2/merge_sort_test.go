@@ -1,4 +1,4 @@
-package chaptor2
+package main
 
 import (
 	"reflect"

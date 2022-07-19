@@ -1,4 +1,4 @@
-package chaptor2
+package main
 
 func innerMergeSort(a []int, p int, r int) []int {
 	if p >= r {
