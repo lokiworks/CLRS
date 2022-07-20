@@ -37,8 +37,3 @@ func addBinary(a string, b string) string {
 	return reverseResult
 
 }
-
-func main() {
-	r := addBinary("11", "1")
-	println(r)
-}
