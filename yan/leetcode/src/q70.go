@@ -29,8 +29,3 @@ func climbStairsV2(n int) int {
 	}
 	return second
 }
-
-func main() {
-	println(climbStairs(4))
-	println(climbStairsV2(4))
-}
