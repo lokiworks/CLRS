@@ -29,8 +29,3 @@ func randomizedQuickSort(a []int) []int {
 	innerRandomizedQuickSort(a, 0, len(a)-1)
 	return a
 }
-
-func main() {
-	a := randomizedQuickSort([]int{5, 4, 2, 2, 1})
-	println(a)
-}

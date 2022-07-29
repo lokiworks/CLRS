@@ -39,8 +39,3 @@ func insertSort(a []float64) {
 	}
 
 }
-
-func main() {
-	a := bucketSort([]float64{0.897, 0.565, 0.656, 0.1234})
-	println(a)
-}

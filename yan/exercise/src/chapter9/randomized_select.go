@@ -39,8 +39,3 @@ func partition(a []int, p, r int) int {
 	return i + 1
 
 }
-
-func main() {
-	a := randomizedSelect([]int{6, 19, 4, 12, 14, 9, 15, 7, 8, 11, 3, 13, 2, 5, 10}, 0, 14, 4)
-	println(a)
-}

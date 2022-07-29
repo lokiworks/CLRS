@@ -59,14 +59,3 @@ func mergeKLists(lists []*ListNode) *ListNode {
 
 	return l
 }
-
-func main() {
-	li := []*ListNode{}
-	l1 := ListNode{Val: 4, Next: &ListNode{Val: 3, Next: nil}}
-	l2 := ListNode{Val: 5, Next: nil}
-	li = append(li, &l1)
-	li = append(li, &l2)
-	l := mergeKLists(li)
-	println(l)
-
-}
