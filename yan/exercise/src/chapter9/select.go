@@ -72,8 +72,3 @@ func insertSort(a []int) []int {
 
 	return a
 }
-
-func main() {
-	v := select1([]int{6, 19, 4, 12, 14, 9, 15, 7, 8, 11, 3, 13, 2, 5, 10}, 0, 14, 4)
-	println(v)
-}

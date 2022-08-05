@@ -45,8 +45,3 @@ func deleteDuplicatesV2(head *ListNode) *ListNode {
 	}
 	return head
 }
-
-func main() {
-	l := &ListNode{1, &ListNode{1, &ListNode{2, &ListNode{3, &ListNode{3, nil}}}}}
-	deleteDuplicatesV2(l)
-}
