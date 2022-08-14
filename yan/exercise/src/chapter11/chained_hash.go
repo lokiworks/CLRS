@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 const ArraySize = 7
 
 type HashTable struct {
@@ -74,20 +72,21 @@ func Init() *HashTable {
 	}
 	return result
 }
-func main() {
-	testHashTable := Init()
-	testHashTable.Insert(1)
-	testHashTable.Insert(2)
-	testHashTable.Insert(3)
-	fmt.Println(testHashTable.Search(1))
-	fmt.Println(testHashTable.Search(2))
-	fmt.Println(testHashTable.Search(3))
 
-	testHashTable.Delete(1)
-	testHashTable.Delete(2)
-	testHashTable.Delete(3)
-
-	fmt.Println(testHashTable.Search(1))
-	fmt.Println(testHashTable.Search(2))
-	fmt.Println(testHashTable.Search(3))
-}
+//func main() {
+//	testHashTable := Init()
+//	testHashTable.Insert(1)
+//	testHashTable.Insert(2)
+//	testHashTable.Insert(3)
+//	fmt.Println(testHashTable.Search(1))
+//	fmt.Println(testHashTable.Search(2))
+//	fmt.Println(testHashTable.Search(3))
+//
+//	testHashTable.Delete(1)
+//	testHashTable.Delete(2)
+//	testHashTable.Delete(3)
+//
+//	fmt.Println(testHashTable.Search(1))
+//	fmt.Println(testHashTable.Search(2))
+//	fmt.Println(testHashTable.Search(3))
+//}
