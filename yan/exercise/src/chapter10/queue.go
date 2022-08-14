@@ -15,7 +15,3 @@ func (s *Queue) Dequeue() int {
 	*s = (*s)[1:len(*s)]
 	return x
 }
-
-func main() {
-
-}

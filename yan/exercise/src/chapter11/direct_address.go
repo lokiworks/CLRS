@@ -16,7 +16,3 @@ func directAddressInsert(T []DirectAddressObject, x DirectAddressObject) {
 func directAddressDelete(T []DirectAddressObject, x DirectAddressObject) {
 	T[x.k] = DirectAddressObject{}
 }
-
-func main() {
-
-}
