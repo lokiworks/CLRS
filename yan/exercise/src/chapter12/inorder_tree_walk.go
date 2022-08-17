@@ -6,17 +6,18 @@ type BinaryTreeNode struct {
 	k     int
 	left  *BinaryTreeNode
 	right *BinaryTreeNode
+	p     *BinaryTreeNode
 }
 
 type BinaryTree struct {
 	root *BinaryTreeNode
 }
 
-func inorderTreeWalk(n *BinaryTreeNode) {
+func treeWalk(n *BinaryTreeNode) {
 	if n != nil {
-		inorderTreeWalk(n.left)
+		treeWalk(n.left)
 		fmt.Println(n.k)
-		inorderTreeWalk(n.right)
+		treeWalk(n.right)
 	}
 }
 
@@ -41,21 +42,110 @@ func iterativeTreeSearch(n *BinaryTreeNode, k int) *BinaryTreeNode {
 	return n
 }
 
+func treeMinimum(n *BinaryTreeNode) *BinaryTreeNode {
+	if n == nil {
+		return nil
+	}
+	for n.left != nil {
+		n = n.left
+	}
+	return n
+}
+
+func treeMaximum(n *BinaryTreeNode) *BinaryTreeNode {
+	if n == nil {
+		return nil
+	}
+	for n.right != nil {
+		n = n.right
+	}
+	return n
+}
+
+func treeSuccessor(n *BinaryTreeNode) *BinaryTreeNode {
+	if n.right != nil {
+		return treeMinimum(n.right)
+	} else {
+		y := n.p
+		for y != nil && n == y.right {
+			n = y
+			y = y.p
+		}
+
+		return y
+	}
+}
+
+func treeInsert(T *BinaryTree, z *BinaryTreeNode) {
+	x := T.root
+	var y *BinaryTreeNode
+	for x != nil {
+		y = x
+		if z.k < x.k {
+			x = x.left
+		} else {
+			x = x.right
+		}
+	}
+	z.p = y
+	if y == nil {
+		T.root = z
+	} else if z.k < y.k {
+		y.left = z
+	} else {
+		y.right = z
+	}
+}
+
+func transplant(T *BinaryTree, u, v *BinaryTreeNode) {
+	if u.p == nil {
+		T.root = v
+	} else if u == u.p.left {
+		u.p.left = v
+	} else {
+		u.p.right = v
+	}
+	if v != nil {
+		v.p = u.p
+	}
+}
+
+func treeDelete(T *BinaryTree, z *BinaryTreeNode) {
+	if z.left == nil {
+		transplant(T, z, z.right)
+	} else if z.right == nil {
+		transplant(T, z, z.left)
+	} else {
+		y := treeMinimum(z.right)
+		if y != z.right {
+			transplant(T, y, y.right)
+			y.right = z.right
+			y.right.p = y
+		}
+		transplant(T, z, y)
+		y.left = z.left
+		y.left.p = y
+	}
+}
+
 func main() {
+	t := BinaryTree{}
+	treeInsert(&t, &BinaryTreeNode{k: 1})
+	treeInsert(&t, &BinaryTreeNode{k: 6})
+	treeInsert(&t, &BinaryTreeNode{k: 3})
+	treeInsert(&t, &BinaryTreeNode{k: 8})
+	treeInsert(&t, &BinaryTreeNode{k: 5})
+	treeInsert(&t, &BinaryTreeNode{k: 2})
 
-	left := BinaryTreeNode{5, &BinaryTreeNode{3, nil, nil}, &BinaryTreeNode{6, nil, nil}}
+	treeWalk(t.root)
 
-	right := BinaryTreeNode{10, &BinaryTreeNode{8, nil, nil}, &BinaryTreeNode{15, nil, nil}}
+	treeDelete(&t, &BinaryTreeNode{k: 1})
+	treeDelete(&t, &BinaryTreeNode{k: 6})
+	treeDelete(&t, &BinaryTreeNode{k: 3})
+	treeDelete(&t, &BinaryTreeNode{k: 8})
+	treeDelete(&t, &BinaryTreeNode{k: 5})
+	treeDelete(&t, &BinaryTreeNode{k: 2})
 
-	k := 7
-
-	root := BinaryTreeNode{k, &left, &right}
-	inorderTreeWalk(&root)
-
-	s1 := treeSearch(&root, 5)
-	fmt.Println(s1.k)
-
-	s2 := iterativeTreeSearch(&root, 15)
-	fmt.Println(s2.k)
+	treeWalk(t.root)
 
 }
