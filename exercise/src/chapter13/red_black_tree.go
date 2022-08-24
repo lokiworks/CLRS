@@ -120,5 +120,16 @@ func rbInsertFixup(T *RedBlackTree, z *RedBlackNode) {
 	T.root.color = BLACK
 }
 
+func rbTransplant(T *RedBlackTree, u, v *RedBlackNode) {
+	if u.p == nil {
+		T.root = v
+	} else if u == u.p.left {
+		u.p.left = v
+	} else {
+		u.p.right = v
+	}
+	v.p = u.p
+}
+
 func main() {
 }
